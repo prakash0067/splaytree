@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPLAY TREE</title>
+
+    <link rel="stylesheet" href="home-page.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Prism.js CSS for Syntax Highlighting -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+    <!-- Prism.js JS for Syntax Highlighting -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+
+
+</head>
+
+<body>
+    <header>
+        <!-- Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+            <div class="container-fluid justify-content-center justify-content-md-between">
+                <div class="d-flex my-2 my-sm-0">
+                    <a class="navbar-brand me-2 mb-1 d-flex justify-content-center logo-container" href="index.html">
+                        <p class="logo-text">SPLAY TREE</p>
+                    </a>
+                </div>
+
+
+                <ul class="navbar-nav flex-row">
+                    <li class="nav-item me-3 me-lg-0 mx-3">
+                        <a class="nav-link active" href="index.html">
+                            <i class="fas fa-bars me-1"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item me-3 me-lg-0 mx-3">
+                        <a class="nav-link mx-3" href="demo.html">
+                            <span class="">Demo</span>
+                            <i class="fas fa-envelope d-inline-block d-lg-none"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Navbar -->
+    </header>
+
+
+    <!-- Main Content Section -->
+    <section class="mt-5 pt-5">
+        <div class="container">
+            <h1 class="text-center mb-4" style="font-weight: bolder !important;">Introduction to Splay Tree Data
+                Structure</h1>
+            <div class="row">
+                <!-- Left Column: Text Content -->
+                <div class="col-md-8 mt-3">
+                    <p>
+                        Splay tree is a self-adjusting binary search tree data structure, which means that the tree
+                        structure is adjusted dynamically based on the accessed or inserted elements.
+                    </p>
+                    <p class="lead">
+                        The splay tree was first introduced by Daniel Dominic Sleator and Robert Endre Tarjan in 1985.
+                        It has a simple and efficient implementation that allows it to perform search, insertion, and
+                        deletion operations in O(log n) amortized time complexity, where n is the number of elements in
+                        the tree.
+                    </p>
+
+                </div>
+                <div class="col-md-4">
+                    <!-- Optional image galleries or additional content -->
+                    <div class="mb-4">
+                        <img src="splay-tree.jpg" alt="Splay Tree" class="img-fluid rounded" height="400px"
+                            width="600px">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <div>
+                    <h3 class="operations-section-title">Operations in a Splay Tree</h3>
+
+                    <div class="operations-section">
+                        <div class="operation-card">
+                            <div class="operation-card-header">
+                                <span class="operation-icon">
+                                    <img src="https://img.icons8.com/ios-filled/50/000000/plus.png"
+                                        alt="Insertion Icon">
+                                </span>
+                                <span class="operation-title">Insertion</span>
+                            </div>
+                            <div class="operation-card-body">
+                                <p>To insert a new element into the tree, start by performing a regular binary search
+                                    tree insertion. Then, apply rotations to bring the newly inserted element to the
+                                    root of the tree.</p>
+                            </div>
+                        </div>
+
+                        <div class="operation-card">
+                            <div class="operation-card-header">
+                                <span class="operation-icon">
+                                    <img src="https://img.icons8.com/ios-filled/50/000000/delete-forever.png"
+                                        alt="Deletion Icon">
+                                </span>
+                                <span class="operation-title">Deletion</span>
+                            </div>
+                            <div class="operation-card-body">
+                                <p>To delete an element from the tree, first locate it using a binary search tree
+                                    search. Then, if the element has no children, simply remove it. If it has one child,
+                                    promote that child to its position in the tree. If it has two children, find the
+                                    successor of the element (the smallest element in its right subtree), swap its key
+                                    with the element to be deleted, and delete the successor instead.</p>
+                            </div>
+                        </div>
+
+                        <div class="operation-card">
+                            <div class="operation-card-header">
+                                <span class="operation-icon">
+                                    <img src="https://img.icons8.com/ios-filled/50/000000/search.png" alt="Search Icon">
+                                </span>
+                                <span class="operation-title">Search</span>
+                            </div>
+                            <div class="operation-card-body">
+                                <p>To search for an element in the tree, start by performing a binary search tree
+                                    search. If the element is found, apply rotations to bring it to the root of the
+                                    tree. If it is not found, apply rotations to the last node visited in the search,
+                                    which becomes the new root.</p>
+                            </div>
+                        </div>
+
+                        <div class="operation-card">
+                            <div class="operation-card-header">
+                                <span class="operation-icon">
+                                    <img src="https://img.icons8.com/ios-filled/50/000000/swap.png" alt="Rotation Icon">
+                                </span>
+                                <span class="operation-title">Rotation</span>
+                            </div>
+                            <div class="operation-card-body">
+                                <p>The rotations used in a splay tree are either a Zig or a Zig-Zig rotation. A Zig
+                                    rotation is used to bring a node to the root, while a Zig-Zig rotation is used to
+                                    balance the tree after multiple accesses to elements in the same subtree.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <h3 class="operations-section-title">Types of Rotations in Splay Tree</h3>
+
+
+                    <!-- Rotation Descriptions -->
+                    <div class="rotation-section mb-4">
+                        <h4>Zig Rotation</h4>
+                        <p>The Zig Rotation in splay trees operates in a manner similar to the single right rotation in
+                            AVL Tree rotations. This rotation results in nodes moving one position to the right from
+                            their current location. For example, consider the following scenario:</p>
+                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230203100633/Zig-rotation.png"
+                            alt="Zig Rotation" class="img-fluid rounded">
+                    </div>
+
+                    <div class="rotation-section mb-4">
+                        <h4>Zag Rotation</h4>
+                        <p>The Zag Rotation in splay trees operates in a similar fashion to the single left rotation in
+                            AVL Tree rotations. During this rotation, nodes shift one position to the left from their
+                            current location. For instance, consider the following illustration:</p>
+                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230203101229/zag-rotation.png"
+                            alt="Zag Rotation" class="img-fluid rounded">
+                    </div>
+
+                    <div class="rotation-section mb-4">
+                        <h4>Zig-Zig Rotation</h4>
+                        <p>The Zig-Zig Rotation in splay trees is a double zig rotation. This rotation results in nodes
+                            shifting two positions to the right from their current location. Take a look at the
+                            following example for a better understanding:
+                        </p>
+                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230203102114/Zig-zig-rotation.png"
+                            alt="Zig-Zig Rotation" class="img-fluid rounded">
+                    </div>
+
+                    <div class="rotation-section mb-4">
+                        <h4>Zag-Zag Rotation</h4>
+                        <p>In splay trees, the Zag-Zag Rotation is a double zag rotation. This rotation causes nodes to
+                            move two positions to the left from their present position. For example:</p>
+                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230203103016/zag--zag-rotation.png"
+                            alt="Zag-Zag Rotation" class="img-fluid rounded">
+                    </div>
+
+                    <div class="rotation-section mb-4">
+                        <h4>Zig-Zag Rotation</h4>
+                        <p>The Zig-Zag Rotation in splay trees is a combination of a zig rotation followed by a zag
+                            rotation. As a result of this rotation, nodes shift one position to the right and then one
+                            position to the left from their current location. The following illustration provides a
+                            visual representation of this concept:</p>
+                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230203104532/Zig-zag-rotation2.png"
+                            alt="Zig-Zag Rotation" class="img-fluid rounded">
+                    </div>
+
+                    <div class="rotation-section mb-4">
+                        <h4>Zag-Zig Rotation</h4>
+                        <p>The Zag-Zig Rotation in splay trees is a series of zag rotations followed by a zig rotation.
+                            This results in nodes moving one position to the left, followed by a shift one position to
+                            the right from their current location. The following illustration offers a visual
+                            representation of this concept:</p>
+                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230203105833/zag-zig-rotation.png"
+                            alt="Zag-Zig Rotation" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section for Applications, Advantages, and Disadvantages -->
+            <div class="info-section mt-5">
+                <h3 class="section-title">Applications, Advantages, and Disadvantages</h3>
+
+                <div class="info-cards-container">
+                    <!-- Applications Card -->
+                    <div class="info-card">
+                        <div class="info-card-header">
+                            <span class="info-title">Applications</span>
+                        </div>
+                        <div class="info-card-body">
+                            <p>Splay trees are used in applications that require frequently accessed elements to be near
+                                the root. Examples include:</p>
+                            <ul>
+                                <li>Data caching systems</li>
+                                <li>Garbage collection</li>
+                                <li>Memory management</li>
+                                <li>Dynamic sets of data</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Advantages Card -->
+                    <div class="info-card">
+                        <div class="info-card-header">
+                            <span class="info-title">Advantages</span>
+                        </div>
+                        <div class="info-card-body">
+                            <p>Splay trees provide several advantages, including:</p>
+                            <ul>
+                                <li>Amortized time complexity for operations (O(log n))</li>
+                                <li>Self-adjusting nature leads to efficient access patterns</li>
+                                <li>Simple and easy to implement</li>
+                                <li>Dynamic performance based on access frequency</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Disadvantages Card -->
+                    <div class="info-card">
+                        <div class="info-card-header">
+                            <span class="info-title">Disadvantages</span>
+                        </div>
+                        <div class="info-card-body">
+                            <p>However, there are also some drawbacks to using splay trees:</p>
+                            <ul>
+                                <li>Non-constant worst-case time complexity</li>
+                                <li>Not as efficient as balanced trees like AVL or Red-Black trees in the worst case
+                                </li>
+                                <li>Requires additional memory due to the rotations</li>
+                                <li>Less predictable performance for individual operations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="code-section mt-5 pt-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Splay Tree Code Implementation</h2>
+
+            <div class="code-container">
+                <pre><code class="language-javascript">
+    class Node {
+        constructor(value) {
+            this.value = value;  // Initialize node with a value
+            this.left = null;     // Left child is null by default
+            this.right = null;    // Right child is null by default
+        }
+    }
+    
+    class SplayTree {
+        constructor() {
+            this.root = null;  // The root is initially null
+        }
+    
+        // Right rotation to balance the tree
+        rightRotate(x) {
+            const y = x.left;  // The left child of x becomes the new root
+            x.left = y.right;  // The right child of y becomes the left child of x
+            y.right = x;       // x becomes the right child of y
+            return y;          // Return the new root (y)
+        }
+    
+        // Left rotation to balance the tree
+        leftRotate(x) {
+            const y = x.right;  // The right child of x becomes the new root
+            x.right = y.left;   // The left child of y becomes the right child of x
+            y.left = x;         // x becomes the left child of y
+            return y;           // Return the new root (y)
+        }
+    
+        // Splay operation to move the node with the given key to the root
+        splay(root, key) {
+            if (!root || root.value === key) return root;  // If root is null or key matches root's value
+    
+            if (key < root.value) {
+                if (!root.left) return root;  // No left child, return root
+    
+                if (key < root.left.value) {
+                    root.left.left = this.splay(root.left.left, key);  // Zig-Zig case
+                    root = this.rightRotate(root);  // Perform a right rotation
+                } else if (key > root.left.value) {
+                    root.left.right = this.splay(root.left.right, key);  // Zig-Zag case
+                    if (root.left.right) root.left = this.leftRotate(root.left);  // Perform a left rotation
+                }
+    
+                return root.left ? this.rightRotate(root) : root;  // Perform a right rotation if needed
+            } else {
+                if (!root.right) return root;  // No right child, return root
+    
+                if (key > root.right.value) {
+                    root.right.right = this.splay(root.right.right, key);  // Zig-Zig case
+                    root = this.leftRotate(root);  // Perform a left rotation
+                } else if (key < root.right.value) {
+                    root.right.left = this.splay(root.right.left, key);  // Zig-Zag case
+                    if (root.right.left) root.right = this.rightRotate(root.right);  // Perform a right rotation
+                }
+    
+                return root.right ? this.leftRotate(root) : root;  // Perform a left rotation if needed
+            }
+        }
+    
+        // Insert a new node into the splay tree
+        insert(value) {
+            if (!this.root) {
+                this.root = new Node(value);  // If tree is empty, create a new node as root
+                return;
+            }
+    
+            this.root = this.splay(this.root, value);  // Splay the tree to bring the node to the root
+            if (this.root.value === value) return;  // If the value already exists, do nothing
+    
+            const newNode = new Node(value);  // Create a new node to insert
+    
+            // If value is less than root, insert it as left child
+            if (value < this.root.value) {
+                newNode.right = this.root;
+                newNode.left = this.root.left;
+                this.root.left = null;
+            } else {
+                newNode.left = this.root;
+                newNode.right = this.root.right;
+                this.root.right = null;
+            }
+    
+            this.root = newNode;  // Make the new node the root
+        }
+    
+        // Search for a value in the splay tree
+        search(value) {
+            this.root = this.splay(this.root, value);  // Splay the tree to bring the node to the root
+            return this.root && this.root.value === value ? this.root : null;  // Return root if found, else null
+        }
+    
+        // Print tree in order (for debugging)
+        inorder(root) {
+            if (!root) return;  // If root is null, return
+            this.inorder(root.left);  // Recursively traverse left subtree
+            console.log(root.value);  // Print the current node's value
+            this.inorder(root.right);  // Recursively traverse right subtree
+        }
+    }
+    
+    // Example usage:
+    const splayTree = new SplayTree();
+    splayTree.insert(10);  // Insert 10 into the tree
+    splayTree.insert(20);  // Insert 20 into the tree
+    splayTree.insert(30);  // Insert 30 into the tree
+    splayTree.search(20);  // Search for 20
+    
+    splayTree.inorder(splayTree.root);  // Outputs the in-order traversal: 10, 20, 30
+                </code></pre>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

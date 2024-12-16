@@ -1,0 +1,161 @@
+.input-container {
+    border: 1px solid rgb(209, 209, 209);
+    padding: 8px;
+    border-radius: 5px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+#splayCanvas {
+    border: 2px solid grey;
+    background-color: #fff;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+/* Animation classes */
+.node {
+    transition: transform 1s ease-in-out;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #87CEEB;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.edge {
+    position: absolute;
+    background-color: black;
+    width: 2px;
+    transform-origin: top;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    z-index: 100; 
+}
+
+section {
+    overflow-y: auto;
+    padding-bottom: 100px;
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, color 0.3s ease;
+}
+
+/* Logo Text Styling */
+.logo-text {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #28a745;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+/* Hover Effect */
+.logo-container:hover .logo-text {
+    color: #007bff;  /* Change color on hover */
+    transform: scale(1.1); /* Slightly scale up */
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.logo-container:hover .logo-text {
+    animation: bounce 0.5s ease-in-out;
+}
+
+/* Optional Glow Animation */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(0, 123, 255, 0.8), 0 0 20px rgba(0, 123, 255, 0.6);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(0, 123, 255, 0.6), 0 0 30px rgba(0, 123, 255, 0.4);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(0, 123, 255, 0.8), 0 0 20px rgba(0, 123, 255, 0.6);
+    }
+}
+
+.logo-container:hover .logo-text {
+    animation: bounce 0.5s ease-in-out, glow 1s infinite alternate;
+}
+
+
+
+.active {
+    color: green !important;
+}
+
+/* Hover effect for the tabs */
+.navbar-nav .nav-link:hover {
+    color: green !important;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+.canvas-container {
+    overflow: auto;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .col-md-4 {
+        padding: 8px !important;
+        margin-top: 3px !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .scroll-info {
+        display: flex !important;
+    }
+}
+
+.scroll-info {
+    font-size: 12px;
+    color: green;
+    padding: 0px;
+    margin: 0px;
+    font-weight: bold;
+    display: none;
+    justify-content: center;
+}
