@@ -158,4 +158,67 @@ section {
     font-weight: bold;
     display: none;
     justify-content: center;
+    margin-bottom: 8px;
+}
+
+
+/* Responsive Canvas Container */
+.canvas-container {
+    width: 100%; /* Takes full width of its parent container */
+    max-width: 100%; /* Ensures it doesn't exceed the parent container width */
+    height: auto; /* Allows canvas to scale proportionally */
+    overflow: auto; /* Enables scrollbars if needed */
+    margin: 0 auto; /* Centers the container horizontally */
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Make Canvas Responsive */
+#splayCanvas {
+    width: 100%; /* Scales canvas to fill container width */
+    height: auto; /* Maintains aspect ratio */
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* Scrollbar Styling */
+.canvas-container::-webkit-scrollbar {
+    width: 8px; /* Scrollbar width */
+    height: 8px; /* Scrollbar height */
+}
+
+.canvas-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.canvas-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+/* Media Query for Smaller Devices */
+@media (max-width: 768px) {
+    .canvas-container {
+        height: 400px; /* Set a fixed height for smaller screens */
+    }
+
+    #splayCanvas {
+        width: 100%; /* Scale to fit smaller screens */
+        height: 100%;
+    }
+
+    .scroll-info {
+        display: flex !important;
+        justify-content: center;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .canvas-container {
+        height: 300px; /* Reduced height for very small screens */
+    }
 }
