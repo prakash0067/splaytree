@@ -48,4 +48,4 @@ Each of these plays a key role in bringing recently accessed elements to the roo
 ## Getting Started
 
 To run the project locally:
-https://github.com/prakash0067/splaytree.git
+https://github.com/prakash0067/splaytree/
